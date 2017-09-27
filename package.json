@@ -1,0 +1,11 @@
+{
+  "name": "celebrity",
+  "version": "1.0.0",
+  "description": "Celebrity App",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha ."
+  },
+  "author": "",
+  "license": "ISC"
+}
