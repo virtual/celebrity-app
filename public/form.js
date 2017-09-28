@@ -3,9 +3,9 @@ var allOurNames = []; // our little database EJS template engine?
 // protractor front end tdd & selenium 
 var refreshList = function () {
   $("#nameList").empty();
-  allOurNames.forEach((celeb) => {
-    $("#nameList").append("<li>" + celeb.name + " - birthday: " + celeb.dob + celeb.starredIn + "</li>");
-  });
+  // allOurNames.forEach((celeb) => {
+    $("#nameList").append(formatAsCards(allOurNames));
+  // });
 };
 // callback passes the data we are trying to retrieve
 // jquery.getjson
@@ -22,7 +22,8 @@ $(function () { // asynchronus .ready
     var newName = { 
       name: $('#name').val() ,
       dob: $('#dob').val(), 
-      starredIn: $('#starredIn').val()
+      starredIn: $('#starredIn').val().split(", "),
+      imgurl: $('#imgurl').val()
     };
     allOurNames.push(newName);
     // talk to our server - jquery post docs

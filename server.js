@@ -35,6 +35,7 @@ app.post("/celebs", function(req, res) {
   celeb.name  = req.body.name;
   celeb.dob = req.body.dob;
   celeb.starredIn = req.body.starredIn;
+  celeb.imgurl = req.body.imgurl;
   celeb.save(function(err, celebReturned) {
     res.json("name received " + celebReturned);
   });
