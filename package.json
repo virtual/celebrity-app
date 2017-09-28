@@ -7,5 +7,11 @@
     "test": "mocha ."
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.15.5",
+    "mongodb-uri": "^0.9.7",
+    "mongoose": "^4.11.13"
+  }
 }
