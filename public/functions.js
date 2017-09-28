@@ -29,17 +29,29 @@ var formatAsTable = function(allNames){
   //console.log(allNames);
   var tableHeader = "<table class='table table-striped table-bordered table-hover table-sm'><thead class='thead-inverse'><tr> <th>Name</th> <th>Birthday</th> <th>Age</th> <th>Email</th> </tr></thead>";
   var personRow ="";
-  allNames.forEach((person)=>{
-    //console.log("PERON!", person);
+  allNames.forEach((person)=>{ 
     personRow += "<tr><td>" + person.name + "</td><td>" + shortDate(person.birthday) + "</td> <td>" + getAge(person.birthday) + "</td><td>" + emailLink(person.email) + "</td></tr>";
   });
   var tableFooter = "</table>";
   return tableHeader + personRow + tableFooter;
 };
- 
+
+var superFeature = function(person) {
+  console.log(person);
+  var personRow = '';
+  // if (person.imgurl !== undefined) {
+    personRow += '<div style="margin: 0 0 1rem 0;background-image: url('+ person.imgurl +'); background-repeat: no-repeat; background-size: cover; background-position: center; color:#fff; padding: 10rem 0;">';
+    personRow += '<h1>' + person.name + '</h1>';
+    personRow += '<h4 class="card-title">'+ person.starredIn.join(", ") +'</h4>';
+    personRow += '<p class="card-text">'+ shortDate(person.dob) +' (' + getAge(person.dob) + ')</p>';
+    personRow += '</div>'
+  // }
+  return personRow;
+}
 
 var formatAsCards = function(allNames) {
-  console.log(allNames);
+  $('#superfeature').html(superFeature(allNames[0]));
+  // console.log(allNames);
   var p1 = '<div class="card-columns">';
   var personRow = '';
   allNames.forEach((person)=>{

@@ -16,6 +16,8 @@ $(function () { // asynchronus .ready
     allOurNames = data;
     refreshList();
   });
+
+
   // asynchronus, only works when you do a click
   $('#formButton').click(function (e) {
     e.preventDefault();
@@ -35,5 +37,8 @@ $(function () { // asynchronus .ready
     $(this).parent('form').each(function () {
       this.reset();
     });
+
+
   });
+  
 });
